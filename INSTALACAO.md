@@ -1,36 +1,73 @@
 # Instalação, atualização e versionamento
 
-## GitHub — repositório fonte
-1. Crie repositório privado inicialmente, por exemplo `thsouzabr/construtor-de-agentes-e-skills` (repositório exclusivo, a ser criado).
-2. Envie todo o conteúdo desta pasta, preservando `SKILL.md`, `references/`, `templates/`, `scripts/` e `chatgpt/`.
-3. Revise `git diff` antes do commit; não inclua dados de clientes, segredos, credenciais, snapshots do Painel ou material confidencial sem licença.
-4. Marque versões por tag (ex.: `v2.0.0`) somente após revisão. A cada mudança na SOUL ou skill do time, rodar análise de impacto nos contratos.
+Este manual explica como instalar ou consultar o **Construtor de Agentes e Skills** a partir do repositório público oficial:
+
+**https://github.com/thsouzabr/Construtor-de-Agentes-e-Skills**
+
+A publicação dos arquivos não instala automaticamente o agente em nenhum serviço.
+
+## 1. Baixar os arquivos
+
+No GitHub, abra o repositório, clique em **Code** e selecione **Download ZIP**. Extraia o conteúdo no computador. Para quem utiliza Git:
 
 ```bash
-git init
-git add .
-git commit -m "feat: construtor de agentes e skills v2"
-# git remote add origin URL-REAL-DO-SEU-REPOSITORIO
-# git push -u origin main
+git clone https://github.com/thsouzabr/Construtor-de-Agentes-e-Skills.git
+cd Construtor-de-Agentes-e-Skills
 ```
 
-## Claude Code
-Coloque a pasta do pacote em `.claude/skills/construtor-de-agentes-e-skills/` do projeto ou outro diretório de skills suportado pela sua instalação. Reinicie/recarregue o contexto conforme necessário; solicite: `Use a skill construtor-de-agentes-e-skills para revisar a SOUL do Edu e criar contrato com Dex`. Confirmar reconhecimento na instalação real.
+Todos os arquivos de orientação foram escritos em português. Nomes de campos padronizados, caminhos técnicos e sintaxe de programação foram preservados para garantir compatibilidade.
 
-## Claude.ai
-Caso sua conta exponha importação de skills personalizadas, importe o ZIP sem remover a pasta raiz. Verifique a ativação em um teste simples. Recursos e localização da opção podem variar.
+## 2. Usar no ChatGPT
 
-## ChatGPT
-O ZIP não instala automaticamente um GPT. Crie uma área/projeto/agente personalizado disponível na sua conta; copie `chatgpt/INSTRUCOES-AGENTE-CHATGPT.md` para as instruções e anexe como conhecimento `SKILL.md`, `references/` e `templates/` quando o recurso permitir. Conecte Drive ou GitHub somente mediante autorização, verificando escopo. Quando a configuração não aceitar pastas, envie os arquivos separadamente ou o ZIP quando o produto oferecer leitura dele. O agente deve sempre reler fontes atualizadas.
+Crie um espaço de trabalho ou agente configurável, conforme os recursos disponíveis na conta. Utilize o conteúdo de `chatgpt/INSTRUCOES-AGENTE-CHATGPT.md` como instrução persistente. Acrescente `SKILL.md`, a pasta `references/` e a pasta `templates/` ao material de conhecimento quando a plataforma permitir.
 
-## Validação local
+Quando usar arquivos do GitHub como referência, peça que o agente consulte a versão atual antes de revisar ou criar novas skills. O acesso a pastas privadas, Drive e Painel exige conexões e permissões próprias. Não presuma que a conexão esteja habilitada.
+
+## 3. Usar no Claude Code
+
+Copie a pasta para um diretório de skills suportado pelo seu ambiente, por exemplo:
+
+```text
+.claude/skills/construtor-de-agentes-e-skills/
+  SKILL.md
+  references/
+  templates/
+  scripts/
+```
+
+Peça: «Use a skill construtor-de-agentes-e-skills para analisar a SOUL do Edu e propor um contrato com Dex». Verifique que a instalação reconheceu a skill antes de considerar a configuração concluída.
+
+## 4. Usar no Claude.ai
+
+Caso a conta ofereça importação de skills personalizadas, compacte a pasta que contém `SKILL.md` e os arquivos de apoio e importe o ZIP. A disponibilidade e a localização dessa opção podem variar.
+
+## 5. Executar uma solicitação
+
+Exemplo:
+
+> Leia a SOUL do agente informado, identifique responsabilidades e competências, proponha melhorias, crie as skills necessárias com metodologias especializadas e prepare contratos de integração. Não altere os originais sem autorização. Identifique cada evidência e o que ainda não foi verificado.
+
+## 6. Validar localmente
+
+Requer Python 3.11 ou superior.
+
 ```bash
 python scripts/validate_package.py .
-python scripts/validate_skill.py CAMINHO-DE-UMA-SKILL-GERADA
+python scripts/validate_skill.py CAMINHO-DA-SKILL-GERADA
 ```
-O sucesso técnico significa somente presença e ligações locais válidas, não execução real ou qualidade do método. Testar no Hermes/ChatGPT/Claude antes de declarar homologado.
 
-## Governança Time Inteligente
-A oficina prepara e revisa; a Biblioteca oficial distribui após aprovação; a VPS recebe apenas versão autorizada. Não mudar SOULs ou skills instaladas apenas por haver uma versão nova no GitHub. Executar teste de compatibilidade dos contratos e garantir rollback.
+A validação confirma estrutura e referências locais. **Não confirma qualidade especializada, conexão com APIs, integração entre agentes ou homologação.** O workflow do GitHub Actions repete a validação estrutural a cada envio de alterações.
 
-Consulte também `PUBLICACAO-GITHUB.md` para instruções específicas da conta e envio.
+## 7. Atualizar em colaboração com o sócio
+
+Abra uma branch, explique as alterações, avalie o impacto sobre SOULs, skills e contratos, execute os testes e envie um Pull Request para revisão. Consulte `COMO-COLABORAR.md`.
+
+## 8. Segurança e publicação pública
+
+Este repositório é **público**. Não envie segredos, tokens, credenciais, dados de clientes, capturas do Painel ou documentação operacional sensível. Os exemplos devem utilizar informações fictícias rotuladas.
+
+O projeto identifica sua licença como **proprietária**: disponibilizar o código publicamente não autoriza automaticamente redistribuição ou uso comercial por terceiros. Antes de ampliar a colaboração pública, escolha com o sócio a licença apropriada.
+
+## 9. Governança do Time Inteligente
+
+A oficina prepara e revisa. A Biblioteca oficial distribui versões aprovadas. A VPS recebe apenas a versão autorizada. Uma atualização no GitHub não altera por si só as SOULs ou skills instaladas. Toda mudança de contrato exige análise de impacto e teste de regressão.
