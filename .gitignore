@@ -1,0 +1,16 @@
+# Credenciais e configuração local
+.env
+.env.*
+!.env.exemplo
+*.pem
+*.key
+.secrets/
+segredos/
+credenciais/
+# Python
+__pycache__/
+*.pyc
+.venv/
+# Temporários
+.DS_Store
+*.log
