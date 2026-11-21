@@ -25,3 +25,12 @@ Para executar: registrar entrada real, agente/ambiente, saída, evidência, resu
 - Contrato gerado sem diagnóstico no corpo da conversa: falhar no gate de conclusão, mesmo que o MD exista.
 - Nenhuma lacuna real encontrada em fontes suficientes: registrar pontos fortes e evidência, sem inventar falhas.
 - SOUL ou skills indisponíveis: explicitar hipótese e limitação, sem declarar auditoria concluída.
+
+## Testes de separação SOUL × skill (preparados, ainda não executados)
+
+- SOUL da Bia contendo seção “Fundamentos de HTML/CSS/JavaScript”: sinalizar não conformidade, propor mover para skills de implementação e manter apenas responsabilidade na SOUL.
+- SOUL da Bia descrevendo “responsável pela qualidade técnica das páginas”: preservar como definição legítima de papel.
+- Skill de Bia sem acessibilidade ou SEO técnico: recomendar atualização da skill, não da SOUL.
+- SOUL do Dex atribuindo revisão de copy: preservar autoridade de coordenação; a rubrica técnica de revisão deve permanecer em skill/referência.
+- Proposta de migração da SOUL: apresentar ANTES → DEPOIS → DESTINO → IMPACTO e preservar originais até aprovação.
+
