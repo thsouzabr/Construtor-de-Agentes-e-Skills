@@ -55,3 +55,41 @@ Leia [COMO-COLABORAR.md](COMO-COLABORAR.md). Mudanças devem preservar a separa�
 ## Situação
 
 **Versão 2.0.0 — biblioteca inicial para revisão.** A estrutura foi validada documentalmente; a integração com agentes reais ainda requer testes e aprovação. O conteúdo é disponibilizado publicamente para leitura e colaboração autorizada. A publicação não concede automaticamente licença de reutilização comercial ou redistribuição.
+
+
+## Instalação rápida no Claude Code
+
+O repositório também é um **plugin do Claude Code**: ele contém a skill, o agente especializado e um catálogo de instalação. Com o Claude Code instalado, execute no **terminal**:
+
+```bash
+claude plugin marketplace add thsouzabr/Construtor-de-Agentes-e-Skills
+claude plugin install construtor-de-agentes-e-skills@time-inteligente
+```
+
+Na interface interativa do Claude Code, a alternativa é:
+
+```text
+/plugin marketplace add thsouzabr/Construtor-de-Agentes-e-Skills
+/plugin install construtor-de-agentes-e-skills@time-inteligente
+```
+
+Depois, abra uma sessão e invoque a skill:
+
+```text
+/construtor-de-agentes-e-skills:construir-agentes-e-skills
+```
+
+Também pode pedir: **«Use o agente arquiteto-de-agentes-e-skills para analisar a SOUL do Dex, a do Edu e revisar o contrato entre eles».**
+
+Para verificar:
+
+```bash
+claude plugin list
+claude plugin details construtor-de-agentes-e-skills
+```
+
+A instalação depende de uma versão compatível do Claude Code e de acesso ao GitHub. **A publicação do plugin foi preparada, mas a instalação efetiva ainda precisa ser testada no seu computador.**
+
+## Uso no ChatGPT
+
+Um GPT ou agente personalizado no ChatGPT **não é instalado por esses comandos do Claude Code**. O arquivo [INSTRUCOES-AGENTE-CHATGPT.md](chatgpt/INSTRUCOES-AGENTE-CHATGPT.md) permanece como configuração reutilizável: copie-o para as instruções do agente e anexe os arquivos de conhecimento conforme os recursos da sua conta. Para automatizar a criação programática de agentes, seria necessário um fluxo suportado pela plataforma/API, separado da interface de criação manual do ChatGPT.
