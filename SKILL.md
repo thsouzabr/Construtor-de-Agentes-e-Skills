@@ -5,7 +5,7 @@ license: Proprietária - Time Inteligente
 compatibility: Requer acesso autorizado aos arquivos para analisar SOULs e pastas; pesquisa externa para verificar metodologias; conectores e testes integrados dependem do ambiente.
 metadata:
   author: Time Inteligente
-  version: '2.2.0'
+  version: '2.3.0'
   domain: agent-and-skill-engineering
 ---
 
@@ -16,6 +16,18 @@ Criar sistemas de agentes especializados, coerentes e governáveis, a partir de 
 
 ## Metodologia
 Aplicar **engenharia de responsabilidades e contratos** como síntese arquitetural própria do Time Inteligente, não como metodologia externa falsamente atribuída. Apoiar a decomposição de tarefas em análise de função, matrizes de responsabilidade (RACI quando cabível), projeto por contratos (pré-condições, pós-condições e invariantes) e testes de contrato/integração. Consultar `references/engenharia-de-agentes.md`, `references/contratos-entre-agentes.md`, `references/politica-metodologias.md`. Para cada *skill de domínio*, pesquisar, citar e aplicar **metodologia especializada verificável**. Distinguir abordagem interna, metodologia de domínio e regra técnica de plataforma.
+
+## Regra inegociável: SOUL não é manual de habilidades
+
+A SOUL responde **quem é, para que existe, pelo que responde, o que pode decidir e como se relaciona**. A skill responde **como executar com competência, por qual método, com quais padrões técnicos e como conferir a entrega**.
+
+**Não inserir na SOUL** fundamentos, tutoriais, receitas, código, padrões de sintaxe ou listas detalhadas de habilidades técnicas, como HTML, CSS, JavaScript, SEO técnico, UX/UI, responsividade, acessibilidade, componentização e microdados. Esses assuntos pertencem à skill especializada, às referências técnicas ou aos procedimentos.
+
+A SOUL pode definir o escopo de responsabilidade em alto nível, por exemplo: "A Bia responde pela qualidade e conformidade técnica das páginas e utiliza as skills de implementação e auditoria correspondentes". Não deve ensinar como implementar HTML, CSS ou JavaScript.
+
+**Teste de destino:** se o trecho é um conhecimento que pode ser aprendido, atualizado, testado e versionado sem mudar a identidade ou a autoridade do agente, pertence à skill/referência, não à SOUL. Se define missão, resultado, autonomia ou responsabilidade, pertence à SOUL.
+
+Na auditoria, relatar cada bloco técnico indevido, o destino proposto e o impacto da mudança, preservando o original até aprovação.
 
 ## Quando usar
 - **Modo A — Descrição → agente:** descobrir missão, fronteiras, autoridade, interfaces e competências a partir da descrição do usuário; propor uma SOUL e catálogo de skills.
@@ -107,6 +119,7 @@ Para agente novo: `Parecer → SOUL proposta → Matriz de competências → Pla
 - [ ] Todas as responsabilidades essenciais mapeadas para competências e skills quando cabível.
 - [ ] Metodologias de domínio citadas com referências verificáveis.
 - [ ] SOUL, skills, procedures, referências, Painel e contratos separados.
+- [ ] SOUL auditada para fundamentos técnicos indevidos e migração proposta para skills/referências.
 - [ ] Entradas/saídas e critérios de aceite de ambos os lados verificáveis.
 - [ ] Diagnóstico das competências, inclusive conhecimento de validação do coordenador, exibido ao usuário com pontos fortes, problemas, lacunas, fontes e ações recomendadas.
 - [ ] Nenhum contrato apresentado como concluído apenas porque um arquivo .md foi gravado.
