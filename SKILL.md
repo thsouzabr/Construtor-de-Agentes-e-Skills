@@ -5,7 +5,7 @@ license: Proprietária - Time Inteligente
 compatibility: Requer acesso autorizado aos arquivos para analisar SOULs e pastas; pesquisa externa para verificar metodologias; conectores e testes integrados dependem do ambiente.
 metadata:
   author: Time Inteligente
-  version: '2.0.0'
+  version: '2.2.0'
   domain: agent-and-skill-engineering
 ---
 
@@ -62,16 +62,18 @@ Comparar métodos com fontes verificáveis, autor/entidade, publicação, finali
 Usar `templates/modelo-skill.md` e referências existentes. Estrutura obrigatória: Metodologia, Quando usar, Antes de começar, Diagnóstico, Critérios de decisão, Método, Critérios de pronto, Nota de 0 a 10, Como entregar, Cuidados, Conferência antes de entregar, Casos de teste. Incluir contratos de dados, dependências, travas, evidência, status e fontes. Usar `scripts/validate_skill.py` como conferência estrutural, não validação de qualidade.
 
 ### 7. Projetar contratos entre agentes quando solicitado
+**Primeiro diagnosticar criticamente, depois formalizar:** ler as SOULs e skills dos dois lados; identificar pontos fortes, falhas, lacunas técnicas, conhecimentos faltantes no revisor, sobreposições, incompatibilidade e melhoria nas skills de revisão. Antes de declarar contrato concluído, executar o protocolo de `references/auditoria-diagnostica-de-contratos.md` e preencher `templates/modelo-diagnostico-contratual.md`. O parecer deve aparecer também na resposta ao usuário, com problemas, prioridades e recomendações; não basta criar arquivos.
 Partir da SOUL e das skills de **ambos** os agentes, não somente do coordenador. Para cada interface registrar: evento de disparo; produtor e consumidor; versão; finalidade; dados de entrada/saída; campo obrigatório/opcional; proveniência; invariantes; status; prazo quando documentado; aceite, devolução e escalonamento; permissões; limites de autoridade. Aplicar **dupla conferência**: produtor verifica o que entrega; consumidor verifica o que recebeu e sua suficiência; ambos registram divergências sem forçar aprovação. Usar `templates/modelo-contrato-entre-agentes.md` e `references/contratos-entre-agentes.md`.
 
 ### 8. Auditar coerência do conjunto
+**Examinar especialmente se o coordenador/consumidor sabe avaliar a qualidade do trabalho especializado:** competências para *validar* diferem das competências para *executar*. Para cada recebimento, cruzar critério exigido, conteúdo entregue, conhecimento necessário do revisor, skill de revisão existente e eventuais lacunas. Propor ampliar referências ou skill existente antes de criar redundância.
 Checar **cobertura** (toda responsabilidade tem capacidade), **não sobreposição** (nenhum trabalho vital sem dono ou com autoridade ambígua), **interoperabilidade** (saída compatível com entrada), **rastreabilidade** (fontes e versões), **permissão** (servidor, não promessas), **observabilidade** (status/evidência) e **falhas** (bloqueio, retorno, escalonamento). Em time completo executar testes de cadeia e mudanças de cenário.
 
 ### 9. Validar com gates e testes
 Primeiro validar estrutura e travas não compensáveis: fonte, direitos, método, dados, permissão, contrato, conflito e evidências. Depois rubricar 0 a 10 com critérios por especialidade. Criar cenários de sucesso, ausência de dado, erro de API, conflito de escopo, devolução, incompatibilidade de versões, autorização negada e regressão; testes de contrato nos dois sentidos. **Teste documentado ≠ teste executado.** `references/qualidade-e-testes.md`, `references/testes-da-skill-mestre.md`.
 
 ### 10. Entregar pacote e governança
-Entregar diagnóstico; SOUL proposta ou diff; mapa de competências e cobertura; lista de skills e prioridade; skills completas; referências; contratos de interface; matriz de testes e execução observada; relatório de validação; pendências e próximo responsável. Marcar estado: **Proposta → Escrita → Revisada → Testada → Na Biblioteca → Na VPS**. Publicar no GitHub ou instalar apenas se solicitado/autorizado e mediante capacidade real. Preparar repositório independente sem dados de clientes nem tokens. `references/governanca.md`.
+Entregar diagnóstico crítico explícito (o que está bom, ruim, lacunas por agente, hipóteses verificáveis e melhorias priorizadas) na resposta E em documento; SOUL proposta ou diff; mapa de competências e cobertura; lista de skills e prioridade; skills completas; referências; contratos de interface; matriz de testes e execução observada; relatório de validação; pendências e próximo responsável. Marcar estado: **Proposta → Escrita → Revisada → Testada → Na Biblioteca → Na VPS**. Publicar no GitHub ou instalar apenas se solicitado/autorizado e mediante capacidade real. Preparar repositório independente sem dados de clientes nem tokens. `references/governanca.md`.
 
 ## Critérios de pronto
 - SOUL ou proposta explicitamente ligada à missão e aos limites de decisão.
@@ -79,6 +81,7 @@ Entregar diagnóstico; SOUL proposta ou diff; mapa de competências e cobertura;
 - Skills de competências repetíveis com métodos especializados e referências verificadas.
 - Contratos entre agentes para todas as passagens em escopo quando integração for solicitada.
 - Duplo aceite com critérios e retornos, não apenas checklists idênticos.
+- Parecer bilateral com pontos fortes, deficiências, capacidade de validação do coordenador, prioridades, propostas concretas e testes; arquivo de contrato sozinho não satisfaz conclusão.
 - Segurança, escopo, dados vivos e aprovações separados da documentação.
 - Testes preparados e resultados observados rotulados corretamente; status real sem alegação fictícia.
 
@@ -86,7 +89,7 @@ Entregar diagnóstico; SOUL proposta ou diff; mapa de competências e cobertura;
 Avaliação do **projeto**: alinhamento SOUL/resultado (0–2); cobertura/fronteiras de competências (0–2); especialização metodológica e qualidade das skills (0–2); contratos bilaterais e autoridade, quando aplicáveis (0–2); rastreabilidade, testes e manutenção (0–2). Se contratos não forem solicitados, os dois pontos avaliam interfaces previstas e sua documentação, sem alegar integração validada. **Travas:** autorização inexistente, fonte inventada, conflito de autoridade não resolvido, função de API imaginária, método sem verificação, contrato incompatível essencial, dados secretos ou testes falsamente executados. Uma trava impede declarar pronto independentemente da nota.
 
 ## Como entregar
-Para agente novo: `Parecer → SOUL proposta → Matriz de competências → Plano de skills → Skills e referências → Contratos necessários → Testes → Pendências`. Para SOUL existente: acrescentar `diagnóstico da SOUL → diff sugerido → impacto nas skills`. Para time: `mapa de interfaces → contratos bilaterais → dupla conferência → testes ponta a ponta → parecer de lacunas`. Sempre fornecer arquivos `.md` editáveis e pacote portátil quando houver ambiente de arquivos.
+Para agente novo: `Parecer → SOUL proposta → Matriz de competências → Plano de skills → Skills e referências → Contratos necessários → Testes → Pendências`. Para SOUL existente: acrescentar `diagnóstico da SOUL → diff sugerido → impacto nas skills`. Para time: `diagnóstico crítico apresentado ao usuário (pontos fortes/fracos/lacunas) → matriz de competências do produtor e revisor → melhorias recomendadas com prioridade → mapa de interfaces → contratos bilaterais → dupla conferência → testes ponta a ponta → conclusão de prontidão`. Sempre fornecer arquivos `.md` editáveis e pacote portátil quando houver ambiente de arquivos.
 
 ## Cuidados
 - Não colocar dados permanentes de clientes, preços, marcas, promessas, telefones, tokens ou decisões comerciais nas skills. Fonte da verdade: Painel via interfaces homologadas e catálogo vigente.
@@ -105,6 +108,8 @@ Para agente novo: `Parecer → SOUL proposta → Matriz de competências → Pla
 - [ ] Metodologias de domínio citadas com referências verificáveis.
 - [ ] SOUL, skills, procedures, referências, Painel e contratos separados.
 - [ ] Entradas/saídas e critérios de aceite de ambos os lados verificáveis.
+- [ ] Diagnóstico das competências, inclusive conhecimento de validação do coordenador, exibido ao usuário com pontos fortes, problemas, lacunas, fontes e ações recomendadas.
+- [ ] Nenhum contrato apresentado como concluído apenas porque um arquivo .md foi gravado.
 - [ ] Fonte dos fatos comerciais e permissões tratadas corretamente.
 - [ ] Testes reais separados de cenários escritos/simulados.
 - [ ] Arquivos completos, status e próximo aprovador registrados.
