@@ -1,0 +1,8 @@
+{
+  "name": "construtor-de-agentes-e-skills",
+  "version": "2.1.0",
+  "description": "Constrói, revisa e audita agentes, SOULs, skills e contratos de integração do Time Inteligente.",
+  "author": {
+    "name": "Time Inteligente"
+  }
+}
