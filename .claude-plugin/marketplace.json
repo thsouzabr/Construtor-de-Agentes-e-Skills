@@ -7,7 +7,10 @@
   "plugins": [
     {
       "name": "construtor-de-agentes-e-skills",
-      "source": "./",
+      "source": {
+        "source": "github",
+        "repo": "thsouzabr/Construtor-de-Agentes-e-Skills"
+      },
       "description": "Construtor de agentes, SOULs, skills e contratos bilaterais"
     }
   ]
