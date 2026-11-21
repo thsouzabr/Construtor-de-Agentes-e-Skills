@@ -1,0 +1,14 @@
+{
+  "name": "time-inteligente",
+  "description": "Ferramentas de engenharia de agentes do Time Inteligente",
+  "owner": {
+    "name": "Time Inteligente"
+  },
+  "plugins": [
+    {
+      "name": "construtor-de-agentes-e-skills",
+      "source": "./",
+      "description": "Construtor de agentes, SOULs, skills e contratos bilaterais"
+    }
+  ]
+}
