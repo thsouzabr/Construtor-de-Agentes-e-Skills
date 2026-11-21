@@ -18,3 +18,10 @@
 | 12 | Mudança de SOUL do Dex | Relatório de impacto nos contratos e skills |
 
 Para executar: registrar entrada real, agente/ambiente, saída, evidência, resultado obtido e conclusão. Não preencher resultados fictícios.
+
+## Testes adicionais de diagnóstico contratual (preparados, não executados)
+- Pedido "faça contrato Dara–Dex" com skill de revisão genérica: identificar se Dex tem critérios de avaliação de copy e recomendar complementar a skill existente antes de criar duplicata.
+- Produtor com entregas completas e revisor sem competência comprovada: classificar contrato NÃO PRONTO e apresentar lacuna.
+- Contrato gerado sem diagnóstico no corpo da conversa: falhar no gate de conclusão, mesmo que o MD exista.
+- Nenhuma lacuna real encontrada em fontes suficientes: registrar pontos fortes e evidência, sem inventar falhas.
+- SOUL ou skills indisponíveis: explicitar hipótese e limitação, sem declarar auditoria concluída.
