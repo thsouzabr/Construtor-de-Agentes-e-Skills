@@ -24,3 +24,6 @@ Não alterar dados da entrega após aceite sem versionamento. Não declarar exec
 
 ## Exemplo Dex ↔ Edu
 Dex fornece objetivo e contexto confirmado. Edu devolve diagnóstico, evidências, alternativas, diretriz, riscos e critérios de verificação. Edu revisa qualidade estratégica; Dex revisa pertinência gerencial. Se faltarem evidências ou objetivo verificável, há devolução fundamentada.
+
+## Diagnóstico antes da assinatura
+Não entregar contrato isolado. Acompanhar de diagnóstico bilateral que declare o que está bom, o que falta e se o recebedor domina o conhecimento necessário para validar sem substituir o especialista. Consultar `auditoria-diagnostica-de-contratos.md` e o modelo `modelo-diagnostico-contratual.md`. Se as skills de validação do coordenador forem insuficientes, propor sua complementação com justificativa, prioridade e teste.
