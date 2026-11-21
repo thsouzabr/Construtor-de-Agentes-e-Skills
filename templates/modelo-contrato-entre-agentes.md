@@ -45,3 +45,6 @@ Motivos possíveis, campos de retorno, responsável pela correção e regras con
 
 ## Compatibilidade, versão e testes
 Casos positivo, negativo, ausência de fonte, incompatibilidade de versão, mudança de SOUL e regressão. Registrar execução real separadamente.
+
+## Diagnóstico obrigatório anexado
+Incluir link para `modelo-diagnostico-contratual.md` preenchido, indicando pontos fortes, lacunas de conhecimento do consumidor, melhoria nas competências de cada lado, prioridade e status de prontidão. **A criação do contrato não equivale à conclusão da análise.**
