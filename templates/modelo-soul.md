@@ -45,3 +45,12 @@ Quando aceitar, revisar, devolver, bloquear ou solicitar aprovação.
 
 ## 13. Situação da proposta
 O que foi verificado, inferido, não verificado e o que depende de aprovação humana.
+
+## Regra editorial obrigatória
+
+A SOUL é um documento de identidade, responsabilidade e autoridade. Não é catálogo de fundamentos nem manual de implementação.
+
+Ao criar ou revisar uma SOUL, registre o domínio e o resultado sob responsabilidade do agente, e referencie suas skills. Não escreva fundamentos de HTML, CSS, JavaScript, UX, SEO, frameworks, métodos técnicos ou tutoriais neste documento. Esses assuntos ficam nas skills especializadas e em `references/`.
+
+Audite a SOUL antes da entrega e, ao encontrar conteúdo técnico indevido, apresente o destino proposto e o impacto da migração.
+
